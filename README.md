@@ -1,4 +1,4 @@
-This repository houses code for the AAAI 2021 paper:
+This repository houses code for (a followup project to) the AAAI 2021 paper:
 
 GLIB: Efficient Exploration for Relational Model-Based Reinforcement Learning via Goal-Literal Babbling
 
