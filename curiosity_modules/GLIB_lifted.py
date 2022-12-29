@@ -10,7 +10,7 @@ import copy
 import itertools
 import numpy as np
 
-import openai
+# import openai
 import tempfile
 
 

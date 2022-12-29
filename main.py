@@ -11,6 +11,7 @@ from settings import EnvConfig as ec
 from settings import GeneralConfig as gc
 
 from collections import defaultdict
+from typing import Tuple, Any
 
 import glob
 import time
@@ -24,7 +25,7 @@ import pickle
 class Runner:
     """Helper class for running experiments.
     """
-    def __init__(self, agent, train_env, test_env, domain_name, curiosity_name):
+    def __init__(self, agent: Agent, train_env: gym.Env, test_env: gym.Env, domain_name: str, curiosity_name: str):
         self.agent = agent
         self.train_env = train_env
         self.test_env = test_env
@@ -33,7 +34,7 @@ class Runner:
         self.num_train_iters = ac.num_train_iters[domain_name]
         self._variational_dist_transitions = self._initialize_variational_distance_transitions()
 
-    def _initialize_variational_distance_transitions(self):
+    def _initialize_variational_distance_transitions(self) -> Tuple[Any,Any,Any]:
         print("Getting transitions for variational distance...")
         fname = "data/{}.vardisttrans".format(self.domain_name)
         if os.path.exists(fname):
@@ -201,7 +202,7 @@ class Runner:
         variational_dist /= len(self._variational_dist_transitions)
         return float(num_successes)/num_problems, variational_dist
 
-def _run_single_seed(seed, domain_name, curiosity_name, learning_name):
+def _run_single_seed(seed: int, domain_name: str, curiosity_name: str, learning_name: str):
     start = time.time()
 
     ac.seed = seed

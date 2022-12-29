@@ -5,7 +5,7 @@ from pddlgym.structs import TypedEntity, ground_literal
 from ndr.learn import run_main_search as learn_ndrs
 from ndr.learn import get_transition_likelihood, print_rule_set, iter_variable_names
 from ndr.ndrs import NOISE_OUTCOME, NDR, NDRSet
-import openai
+# import openai
 
 from collections import defaultdict
 import tempfile
